@@ -1,0 +1,134 @@
+<header class="projects-header">
+	<div class="row">
+		<div class="pull-right">
+			<nav>
+				<ul class='main-nav'>
+					<li>
+						<% if (user) { %>
+							<a ui-sref="account({userId: user._id})"><%= user.username %></a>
+						<% } else { %>
+							<a ui-sref="signup">signup</a>
+						<% } %>
+					</li>
+					<li>
+						<% if (user) { %>
+							<a href="/logout">logout</a>
+						<% } else { %>
+							<a ui-sref="login">login</a>
+						<% } %>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+
+	<div class="projects-hero-content">
+		<div class="row">
+			<h1>Welcome to the projects catalog</h1>
+		</div>
+
+		<div class="row">
+			<div class="col span-1-of-2 steps-box">
+				<h2>Sign up today and login for these 3 amazing features!</h2>
+			</div>
+			<div class="col span-1-of-2 steps-box">
+				<div class="projects-step">
+					<div>1</div>
+					<p>Gain access to project details</p>
+				</div>
+				<div class="projects-step">
+					<div>2</div>
+					<p>Upvote projects and leave comments</p>
+				</div>
+				<div class="projects-step">
+					<div>3</div>
+					<p>
+						Got a brilliant idea? Share by clicking 
+						<% if (user) { %>
+							<a class="btn-link" ui-sref="newpost">here!</a>
+						<% } else { %>
+							<a class="btn-link" ui-sref="signup">here!</a>
+						<% } %>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</header>
+
+<div class="clear-floats"></div>
+
+<section class="section-project-table">
+
+	<div class="row">
+		<% if (user) { %>
+			<a class="btn btn-back pull-right" ui-sref="newpost">Submit a new idea</a>
+		<% } %>
+		
+		<div class="clear-floats"></div>
+
+		<div class="table-container">
+			<table class="table">
+				<thead>
+					<tr>
+						<% if (user) { %>
+							<th></th>
+						<% } %>
+						<th>
+							<a href="" ng-click="sortFunc('upvotes')">
+								Upvotes
+								<span ng-show="sortType=='upvotes' && !sortReverse" class="fa fa-caret-down"></span>
+								<span ng-show="sortType=='upvotes' && sortReverse" class="fa fa-caret-up"></span>
+							</a>
+						</th>
+						<th>
+							<a href="" ng-click="sortFunc('title')">
+								Title
+								<span ng-show="sortType=='title' && !sortReverse" class="fa fa-caret-down"></span>
+								<span ng-show="sortType=='title' && sortReverse" class="fa fa-caret-up"></span>
+							</a>
+						</th>
+				 	
+						<th>
+							<a href="" ng-click="sortFunc('author')">
+								Author
+								<span ng-show="sortType=='author' && !sortReverse" class="fa fa-caret-down"></span>
+								<span ng-show="sortType=='author' && sortReverse" class="fa fa-caret-up"></span>
+							</a>
+						</th>
+						
+						<th>
+							<a href="" ng-click="sortFunc('dateModified')">
+								Date Modified
+								<span ng-show="sortType=='dateModified' && !sortReverse" class="fa fa-caret-down"></span>
+								<span ng-show="sortType=='dateModified' && sortReverse" class="fa fa-caret-up"></span>
+							</a>
+						</th>
+					</tr>
+				</thead>
+				
+				<tr height="100px" ng-class="{ 'content-odd': $odd, 'content-even': $even}" ng-repeat="project in allProjects | orderBy:sortType:sortReverse">
+					<% if (user) { %>
+						<td width="12%">
+							<a class='btn btn-details' id='view-details' ui-sref='selected({projectId: project._id})'>View details</a>
+						</td>
+					<% } %>
+					<td width="10%">{{ project.upvotes.length }}</td>
+					<td width="40%" class="adjust-typography project-title">{{ project.title }}</td>
+					<td width="20%" class="adjust-typography"> {{ project.author }} </td>
+					<td width="20%" class="adjust-typography">{{ project.dateModified | date }}</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+</section>
+
+<footer>
+	<div class="row">
+		<p>
+			Copyright &copy; 2015 by Charles Lee. All rights reserverd.
+		</p>
+	</div>
+</footer>

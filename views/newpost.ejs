@@ -1,0 +1,26 @@
+
+<header>
+	<div class="row">
+			<a class="btn btn-back" ui-sref="projects">back to browsing</a>
+	</div>
+	
+	<div class="section-newpost">
+		
+		<div class="row">
+			<h2>Share your idea!</h2>
+		</div>
+		
+		<div class="row">
+			<form name="ideaForm" method="post" action="/projects" novalidate>
+
+				<input name="title" type="text" placeholder="Project Title" ng-model="projectData.title" required>
+				<textarea name="fullContent" ui-tinymce="tinymceOptions" placeholder="What is your idea?" ng-model="projectData.fullContent" required></textarea>
+				<input name="owner" type="hidden" value="<%= user._id %>">
+				<input class="btn btn-submit" type="submit" value="submit" ng-disabled="ideaForm.$invalid">
+
+			</form>
+			
+		</div>
+
+	</div>
+</header>

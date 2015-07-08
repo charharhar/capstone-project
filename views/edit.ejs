@@ -1,0 +1,27 @@
+
+<header>
+	<div class="row">
+			<a class="btn btn-back" ui-sref="account({userId: user._id})">back to account</a>
+	</div>
+	
+	<div class="section-newpost">
+		
+		<div class="row">
+			<h2>{{project.title}}</h2>
+		</div>
+		
+		<div class="row">
+			<form name="ideaForm" ng-submit="editProject()" novalidate>
+
+				<input name="title" type="text" ng-model="project.title" required>
+				<textarea name="fullContent" ui-tinymce="tinymceOptions"  ng-model="project.fullContent" required></textarea>
+				<input name="owner" type="hidden" value="<%= user._id %>">
+				<input name="lastModified" type="hidden" ng-model="project.dateModified">
+				<input class="btn btn-submit" type="submit" value="save changes" ng-disabled="ideaForm.$invalid">
+
+			</form>
+			
+		</div>
+
+	</div>
+</header>

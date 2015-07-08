@@ -1,0 +1,71 @@
+
+<header>
+
+
+	<div class="row">
+		<a class="btn btn-back" ui-sref="projects">back to browsing</a>
+	</div>
+
+	<div class="row">
+		<h1 class="adjust-typography details-heading">{{ project.title }} </h1>
+	</div>
+
+	<div class="row section-details">
+		<div class="submitted-info adjust-typography">
+			submitted: {{ project.dateCreated | date }} by: {{ projectOwner.username }}
+			<span class="pull-right"> 
+				Like the idea? Give it an upvote!
+				<i class="icon-upvote fa fa-arrow-up" ng-click="upvote('<%= user._id %>')" 
+				ng-class="{ 'upvoted': (project.upvotes.indexOf('<%= user._id %>') > -1) }"></i> 
+				{{ project.upvotes.length }}
+
+			</span>
+			<br/>
+			(last modified: {{ project.dateModified | date }})
+		</div>
+		
+		<div class="full-content-box adjust-typography" ng-bind-html="htmlFormat">
+			{{ project.fullContent }}
+		</div>
+
+	</div>
+	
+	
+</header>
+
+<section class="section-comments">
+	<div class="row">
+		<h2 class="comments-heading">Leave a comment</h2>
+	</div>
+
+	<div class="row">
+		<!-- Allow logged in users to add a comment -->
+
+		<form ng-submit="postComment()">
+			<div class="row">
+				<div class="col span-3-of-4">
+					<textarea class="form-control comment-box" placeholder="Enter a comment" ng-model="newComment"></textarea>
+					<input name="postedBy" value="<%= user.username %>">
+				</div>
+				<div class="col span-1-of-4">
+					<input class="btn btn-comment" type="submit" value="Post">
+				</div>
+			</div>
+		</form>
+
+		<div class="comment-stream-box">
+			<div class="comment-stream adjust-typography" ng-class="{ 'content-odd': $odd, 'content-even': $even}" ng-repeat="comment in project.comments track by $index">
+				{{ comment }} 
+			</div>
+		</div>
+		
+	</div>
+</section>
+
+<footer>
+	<div class="row">
+		<p>
+			Copyright &copy; 2015 by Charles Lee. All rights reserverd.
+		</p>
+	</div>
+</footer>

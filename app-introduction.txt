@@ -1,0 +1,17 @@
+Name: Charles Lee
+Bloc Program / length: Front-end, 36-week
+App Name: Capstoner?
+
+Description:
+This app is a free resource for all bloc.io students to use when coming up with their capstone project to work on. Students can share their ideas in the projects catalog so those who are stumped can get some inspiration for their own project. The learning experience becomes a lot more fun and memorable when you are passionate about the product you are making and it no longer feels like work. This app is designed to help students discover what type of websites interests them the most and to find a product to create that they are very passionate about.
+
+How did you come up with the idea?
+I didn't come up with this idea by myself - it was actually my mentor who pitched the idea to me. Originally, I had no idea what project I wanted to do for my capstone and didnt have a definitive answer to the question "what types of apps are you most interested in?" However, John assured me that it's actually normal for students to have no clue. I immediately thought this was a perfect opportunity to create something that can potentially be helpful for other students like me who cant think of an idea. As I worked on the project, I realized what types of features I wanted to include to improve the user experience of the app. 
+
+Have you published the app to an app store? If so, link?
+Not published to an app store yet.
+
+Demo video link: youtu.be/i323
+
+Screenshots:
+Pic1, Pic2, Pic3, Pic4

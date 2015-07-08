@@ -1,0 +1,34 @@
+
+<section class="account-manage" ng-init="currentLoggedUser = '<%= user._id %>'">
+	<div class="row">
+		<a class="btn btn-back" ui-sref="projects">back to browsing</a>
+	</div>
+	<div class="row account-details">
+		<h2>Welcome <%= user.username %>!</h2>
+		
+		<h2>Your posted projects</h2>
+
+		<div class="projects-box">
+			<div ng-repeat="project in ownersProjects track by $index">
+			
+				<div class="row">
+					<div class="col span-1-of-2">
+						<a class='btn-link adjust-top' ui-sref='selected({projectId: project._id})'>{{project.title}}</a>
+					</div>
+					<div class="col span-1-of-2">
+						<a class="btn" ui-sref="edit({projectId: project._id})" ng-hide="clickedDelete === project._id">Edit</a>
+						
+						<a class="btn btn-delete" href="" ng-click="deletingProject(project._id)" ng-hide="clickedDelete === project._id">Delete</a>
+
+						<a class="btn btn-delete btn-confirm-del" href="" ng-click="deleteProject(project._id)" ng-show="clickedDelete === project._id">Confirm</a>
+						
+						<a class="btn btn-cancel-del" href="" ng-click="deletingProject(project._id)" ng-show="clickedDelete === project._id">Cancel</a>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+</section>

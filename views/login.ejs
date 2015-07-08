@@ -1,0 +1,53 @@
+<header>
+	<div class="section-form">
+	<a class='btn-home' href="#/">home</a>
+
+		<div class="row">
+			<h2 class="page-header">Login</h2>
+		</div>
+
+		<div class="row">
+
+			<form class="form-control" name="userForm" action="/login" method="post" novalidate>
+				
+				<!-- USERNAME -->
+				<div class="row">
+					<div class="col span-1-of-3">
+						<label for="username">Username</label>
+					</div>
+					<div class="col span-2-of-3">
+						<input type="text" name="username" class="form-control" ng-model="username" placeholder="Your username" required>
+					</div>
+				</div>
+				
+				<!-- PASSWORD -->
+				<div class="row">
+					<div class="col span-1-of-3">
+						<label for="password">Password</label>
+					</div>
+					<div class="col span-2-of-3">
+						<input type="password" name="password" class="form-control" ng-model="password" placeholder="Your passowrd" required>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col span-1-of-3">
+						<label>&nbsp;</label>
+					</div>
+					<div class="col span-1-of-3 error-message">
+						{{ errorMessage	}}
+					</div>
+					<div class="col span-1-of-3">
+						<input type="submit" class="btn btn-signup-login pull-right" value="Login"></input>
+					</div>
+				</div>
+
+			</form>
+
+		</div>
+
+		<div class="row">
+			<p>Don't have an account? <a ui-sref="signup" class="btn-link">Signup</a></p>
+		</div>
+	</div>
+</header>
