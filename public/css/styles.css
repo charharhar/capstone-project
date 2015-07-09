@@ -375,6 +375,7 @@ form {
 	transform:translate(-50%, -50%);
 	width:60%;
 	height:70%;
+	overflow-y:auto;
 }
 
 .section-comments {
@@ -396,18 +397,21 @@ form {
 /* ====================== SCROLL BAR ====================== */
 
 .projects-box::-webkit-scrollbar,
-.table-container::-webkit-scrollbar {
+.table-container::-webkit-scrollbar,
+.full-content-box::-webkit-scrollbar {
     width: 12px;
 }
  
 .projects-box::-webkit-scrollbar-track,
-.table-container::-webkit-scrollbar-track {
+.table-container::-webkit-scrollbar-track,
+.full-content-box::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(52, 152, 219,1.0); 
     border-radius: 10px;
 }
  
 .projects-box::-webkit-scrollbar-thumb,
-.table-container::-webkit-scrollbar-thumb {
+.table-container::-webkit-scrollbar-thumb,
+.full-content-box::-webkit-scrollbar-thumb {
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 6px rgba(52, 152, 219,1.0); 
 }

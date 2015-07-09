@@ -9,7 +9,7 @@ How did you come up with the idea?
 I didn't come up with this idea by myself - it was actually my mentor who pitched the idea to me. Originally, I had no idea what project I wanted to do for my capstone and didnt have a definitive answer to the question "what types of apps are you most interested in?" However, John assured me that it's actually normal for students to have no clue. I immediately thought this was a perfect opportunity to create something that can potentially be helpful for other students like me who cant think of an idea. As I worked on the project, I realized what types of features I wanted to include to improve the user experience of the app. 
 
 Have you published the app to an app store? If so, link?
-Not published to an app store yet.
+http://capstoner.herokuapp.com/
 
 Demo video link: youtu.be/i323
 
