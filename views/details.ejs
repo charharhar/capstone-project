@@ -45,7 +45,7 @@
 			<div class="row">
 				<div class="col span-3-of-4">
 					<textarea class="form-control comment-box" placeholder="Enter a comment" ng-model="newComment"></textarea>
-					<input name="postedBy" value="<%= user.username %>">
+					<input name="postedBy" type="hidden" value="<%= user.username %>">
 				</div>
 				<div class="col span-1-of-4">
 					<input class="btn btn-comment" type="submit" value="Post">
@@ -65,7 +65,7 @@
 <footer>
 	<div class="row">
 		<p>
-			Copyright &copy; 2015 by Charles Lee. All rights reserverd.
+			Copyright &copy; 2015 by Charles Lee. All rights reserved.
 		</p>
 	</div>
 </footer>
