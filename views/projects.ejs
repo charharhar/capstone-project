@@ -24,7 +24,7 @@
 
 	<div class="projects-hero-content">
 		<div class="row">
-			<h1>Welcome to the projects catalog</h1>
+			<h1>Welcome to the project catalog</h1>
 		</div>
 
 		<div class="row">
@@ -43,7 +43,7 @@
 				<div class="projects-step">
 					<div>3</div>
 					<p>
-						Got a brilliant idea? Share by clicking 
+						Share your idea now by clicking 
 						<% if (user) { %>
 							<a class="btn-link" ui-sref="newpost">here!</a>
 						<% } else { %>
@@ -76,10 +76,10 @@
 							<th></th>
 						<% } %>
 						<th>
-							<a href="" ng-click="sortFunc('upvotes')">
+							<a href="" ng-click="sortFunc('upvotes.length')">
 								Upvotes
-								<span ng-show="sortType=='upvotes' && !sortReverse" class="fa fa-caret-down"></span>
-								<span ng-show="sortType=='upvotes' && sortReverse" class="fa fa-caret-up"></span>
+								<span ng-show="sortType=='upvotes.length' && !sortReverse" class="fa fa-caret-down"></span>
+								<span ng-show="sortType=='upvotes.length' && sortReverse" class="fa fa-caret-up"></span>
 							</a>
 						</th>
 						<th>
